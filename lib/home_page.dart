@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:my_app/about.dart';
 
 
 //stateful RandomWords widget 
@@ -18,16 +19,20 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
-        // actions: <Widget>[      // Add 3 lines from here...
-        //   IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
-        // ],   
-      ),
+      // appBar: AppBar(
+      //   title: Text('Startup Name Generator'),
+      //   // actions: <Widget>[      // Add 3 lines from here...
+      //   //   IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+      //   // ],   
+      // ),
       body: _buildSuggestions(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/about');
+          // Navigator.pushNamed(context, '/about');
+          Navigator.push(context, new MaterialPageRoute(
+          builder: (context) =>
+            new AboutScreen())
+          );
         },
         child: Icon(Icons.add,),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),

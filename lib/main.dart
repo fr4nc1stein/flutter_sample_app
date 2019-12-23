@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'about.dart';
+import 'tab.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,13 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
      title: 'Startup Name Generator',
      theme: ThemeData(          // Add the 3 lines from here... 
-        primaryColor: Colors.white,
+        primaryColor: Colors.blue,
       ),             
      //home: RandomWords(),
      initialRoute: '/',
      routes: {
       // When navigating to the "/" route, build the FirstScreen widget.
-      '/': (context) => RandomWords(),
+      '/' : (context) => TabBarDemo(),
+      '/randoms': (context) => RandomWords(),
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/about': (context) => AboutScreen(),
      },
